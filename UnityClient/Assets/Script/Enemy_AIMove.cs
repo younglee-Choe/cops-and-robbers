@@ -50,7 +50,7 @@ public class Enemy_AIMove : MonoBehaviour
             FindTarget();
         } else {
             Move();
-            Rotation();
+            // Rotation();
             ElapseTime();
         }
     }
@@ -83,7 +83,7 @@ public class Enemy_AIMove : MonoBehaviour
     {
         if (isWalking)
         {
-            Vector3 _rotation = Vector3.Lerp(transform.eulerAngles, direction, 0.01f);
+            Vector3 _rotation = Vector3.Lerp(transform.eulerAngles, new Vector3(0f, direction.y, 0f), 0.01f);
             rbody.MoveRotation(Quaternion.Euler(_rotation));
         }
     }
